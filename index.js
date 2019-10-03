@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-const noteController = require('');
-const userController = require('');
+const noteController = require('./controllers/notes');
+const userController = require('./controllers/users');
 const parser = require('body-parser');
 
 app.use(parser.urlencoded({ extended:true }));
 app.use("/", noteController);
 app.get("/", (req, res) => {
-    res.redirect("/");
+    res.redirect("/notes");
 });
 
 
