@@ -5,7 +5,9 @@ const userController = require('./controllers/users');
 const parser = require('body-parser');
 
 app.use(parser.urlencoded({ extended:true }));
-app.use("/", noteController);
+app.use("/notes", noteController);
+app.use("/users", userController);
+
 app.get("/", (req, res) => {
     res.redirect("/notes");
 });
